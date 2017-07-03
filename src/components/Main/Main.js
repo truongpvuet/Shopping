@@ -1,17 +1,44 @@
 import React from 'react';
-// import {
-//   View,
-//   Text,
-//   TouchableOpacity,
-// } from 'react-native';
-import Shop from './Shop/Shop';
+import {
+
+} from 'react-native';
+import Home from './Shop/Home/Home';
+
+import Header from './Shop/Header';
 
 export default class Main extends React.Component {
+
+  static navigationOptions = ({ navigation }) => {
+    return {
+      header: (
+        <Header
+          onOpen={() => navigation.navigate('DrawerOpen')}
+        />
+      ),
+    };
+  };
+  // static navigationOptions = {
+  //   headerTitle: <Text> Main Display </Text>,
+  //   headerStyle: {
+  //     backgroundColor: '#00ffff',
+  //     height: height / 8,
+  //   },
+  //   headerLeft: (
+  //     <TouchableOpacity
+  //       onPress={() => this.props.navigation.navigate('DrawerOpen')}
+  //     >
+  //       <Text> Open Drawer </Text>
+  //     </TouchableOpacity>
+  //   ),
+  // }
+
   constructor(props) {
     super(props);
     this.gotoAuthentication = this.gotoAuthentication.bind(this);
     this.gotoChangeInfo = this.gotoChangeInfo.bind(this);
     this.gotoOrderHistory = this.gotoOrderHistory.bind(this);
+    this.drawerOpen = this.drawerOpen.bind(this);
+    this.drawerClose = this.drawerClose.bind(this);
   }
 
   gotoAuthentication() {
@@ -23,10 +50,16 @@ export default class Main extends React.Component {
   gotoOrderHistory() {
     this.props.navigation.navigate('OrderHistory_Display');
   }
+  drawerOpen() {
+    this.props.navigation.navigate('DrawerOpen');
+  }
+  drawerClose() {
+    this.props.navigation.navigate('DrawerClose');
+  }
 
   render() {
     return (
-      <Shop />
+      <Home onOpen={() => this.drawerOpen()} />
     );
   }
 }

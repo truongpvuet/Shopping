@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   View,
-  Text
+  Text,
+  TouchableOpacity
 } from 'react-native';
 
 export default class Home extends React.Component {
@@ -9,6 +10,9 @@ export default class Home extends React.Component {
     return (
       <View style={{ flex: 1, backgroundColor: 'palegreen' }}>
         <Text> Tab Shop -> Home </Text>
+        <TouchableOpacity onPress={this.props.onOpen}>
+          <Text> Click to open Drawer </Text>
+        </TouchableOpacity>
       </View>
     );
   }
