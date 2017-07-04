@@ -1,13 +1,14 @@
 import React from 'react';
 import {
-
+  Image,
+  StyleSheet
 } from 'react-native';
 import Home from './Shop/Home/Home';
-
 import Header from './Shop/Header';
+import homeIconS from '../../media/appIcon/home.png';
+// import homeIcon from '../../media/appIcon/home0.png';
 
 export default class Main extends React.Component {
-
   static navigationOptions = ({ navigation }) => {
     return {
       header: (
@@ -15,22 +16,15 @@ export default class Main extends React.Component {
           onOpen={() => navigation.navigate('DrawerOpen')}
         />
       ),
+      // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+      tabBarIcon: () => (
+        <Image
+          source={homeIconS}
+          style={style.icon}
+        />
+      )
     };
   };
-  // static navigationOptions = {
-  //   headerTitle: <Text> Main Display </Text>,
-  //   headerStyle: {
-  //     backgroundColor: '#00ffff',
-  //     height: height / 8,
-  //   },
-  //   headerLeft: (
-  //     <TouchableOpacity
-  //       onPress={() => this.props.navigation.navigate('DrawerOpen')}
-  //     >
-  //       <Text> Open Drawer </Text>
-  //     </TouchableOpacity>
-  //   ),
-  // }
 
   constructor(props) {
     super(props);
@@ -63,6 +57,13 @@ export default class Main extends React.Component {
     );
   }
 }
+
+const style = StyleSheet.create({
+  icon: {
+    width: 20,
+    height: 20,
+  }
+});
 
 // <View style={{ flex: 1, backgroundColor: 'red', justifyContent: 'center' }}>
 //   <Text> Main Display </Text>
