@@ -8,6 +8,9 @@ import {
 } from 'react-native';
 import profileIcon from '../../media/temp/profile.png';
 
+// componentDidMount() {
+//   this.props.navigation.navigate('DrawerOpen');
+// }
 export default class Menu extends React.Component {
   constructor(props) {
     super(props);
@@ -19,9 +22,6 @@ export default class Menu extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.props.navigation.navigate('DrawerOpen');
-  }
   gotoAuthentication() {
     this.props.navigation.navigate('Authentication_Display');
   }
@@ -38,7 +38,10 @@ export default class Menu extends React.Component {
     } = styles;
     const logoutJSX = (
       <View style={{ flex: 1 }}>
-        <TouchableOpacity style={btnStyle}>
+        <TouchableOpacity
+          style={btnStyle}
+          onPress={() => { this.props.navigation.navigate('Authentication_Display') }}
+        >
           <Text style={btnText}> SIGN IN </Text>
         </TouchableOpacity>
       </View>
@@ -49,13 +52,19 @@ export default class Menu extends React.Component {
           Truong Pham Van
         </Text>
         <View>
-          <TouchableOpacity style={btnSignInStyle}>
+          <TouchableOpacity
+            style={btnSignInStyle}
+            onPress={() => { this.props.navigation.navigate('OrderHistory_Display') }}
+          >
             <Text style={btnTextSignIn}> Order History </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={btnSignInStyle}>
+          <TouchableOpacity
+            style={btnSignInStyle}
+            onPress={() => { this.props.navigation.navigate('ChangeInfo_Display') }}
+          >
             <Text style={btnTextSignIn}> Change Info </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={btnSignInStyle}>
+          <TouchableOpacity style={btnSignInStyle} >
             <Text style={btnTextSignIn}> Sign out </Text>
           </TouchableOpacity>
         </View>

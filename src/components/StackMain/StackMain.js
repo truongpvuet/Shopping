@@ -9,9 +9,6 @@ import OrderHistory from '../OrderHistory/OrderHistory';
 
 export const StackMain = StackNavigator(
   {
-    Main_Display: {
-      screen: Main,
-    },
     Authentication_Display: {
       screen: Authentication,
       navigationOptions: {
@@ -38,6 +35,12 @@ export const StackMain = StackNavigator(
           backgroundColor: '#00ffff'
         }
       }
-    }
+    },
+    Main_Display: {
+      screen: Main,
+    },
+  },
+  {
+    initialRouteName: 'Main_Display'
   }
 );

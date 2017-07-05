@@ -27,11 +27,14 @@ export default class Header extends React.Component {
           <Image source={icLogo} style={iconStyle} />
         </View>
 
-        <TextInput
-          style={textInput}
-          underlineColorAndroid='transparent'
-          placeholder="What do you want to buy"
-        />
+        <View style={{ borderRadius: 5, marginTop: 5, borderColor: '#FFF', borderWidth: 2 }}>
+          <TextInput
+            style={textInput}
+            underlineColorAndroid='transparent'
+            placeholder="What do you want to buy"
+            placeholderTextColor='#a9a9a9'
+          />
+        </View>
       </View>
     );
   }

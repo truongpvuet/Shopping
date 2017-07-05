@@ -53,7 +53,7 @@ export default class Main extends React.Component {
 
   render() {
     return (
-      <Home onOpen={() => this.drawerOpen()} />
+      <Home />
     );
   }
 }
