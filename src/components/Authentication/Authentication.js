@@ -28,10 +28,10 @@ export default class Authentication extends React.Component {
     this.props.navigation.goBack();
   }
   signIn() {
-    this.setState({ siSignIn: true });
+    this.setState({ isSignIn: true });
   }
   signUp() {
-    this.setState({ isSignUp: false });
+    this.setState({ isSignIn: false });
   }
 
   render() {
@@ -42,8 +42,18 @@ export default class Authentication extends React.Component {
 
     const signinJSX = (
       <View>
-        <TextInput style={inputStyle} placeholder='Enter your email' />
-        <TextInput style={inputStyle} placeholder='Enter your password' />
+        <TextInput
+          style={inputStyle}
+          placeholder='Enter your email'
+          underlineColorAndroid='transparent'
+          placeholderTextColor='#a9a9a9'
+        />
+        <TextInput
+          style={inputStyle}
+          placeholder='Enter your password'
+          underlineColorAndroid='transparent'
+          placeholderTextColor='#a9a9a9'
+        />
         <TouchableOpacity style={bigButton}>
           <Text style={buttonText}> SIGN IN NOW </Text>
         </TouchableOpacity>
@@ -51,10 +61,30 @@ export default class Authentication extends React.Component {
     );
     const signupJSX = (
       <View>
-        <TextInput style={inputStyle} placeholder='Enter your name' />
-        <TextInput style={inputStyle} placeholder='Enter your email' />
-        <TextInput style={inputStyle} placeholder='Enter your password' />
-        <TextInput style={inputStyle} placeholder='Re-enter your password' />
+        <TextInput
+          style={inputStyle}
+          placeholder='Enter your name'
+          underlineColorAndroid='transparent'
+          placeholderTextColor='#a9a9a9'
+        />
+        <TextInput
+          style={inputStyle}
+          placeholder='Enter your email'
+          underlineColorAndroid='transparent'
+          placeholderTextColor='#a9a9a9'
+        />
+        <TextInput
+          style={inputStyle}
+          placeholder='Enter your password'
+          underlineColorAndroid='transparent'
+          placeholderTextColor='#a9a9a9'
+        />
+        <TextInput
+          style={inputStyle}
+          placeholder='Re-enter your password'
+          underlineColorAndroid='transparent'
+          placeholderTextColor='#a9a9a9'
+        />
         <TouchableOpacity style={bigButton}>
           <Text style={buttonText}> SIGN UP NOW </Text>
         </TouchableOpacity>
@@ -62,11 +92,13 @@ export default class Authentication extends React.Component {
     );
     const { isSignIn } = this.state;
     const mainJSX = isSignIn ? signinJSX : signupJSX;
+    const ActiveStyle = isSignIn ? activeStyle : inactiveStyle;
+    const InactiveStyle = isSignIn ? inactiveStyle : activeStyle;
 
     return (
       <View style={container}>
         <View style={row1} >
-          <TouchableOpacity>
+          <TouchableOpacity onPress={this.goBackToMain}>
             <Image source={icBack} style={iconStyle} />
           </TouchableOpacity>
           <Text style={titleStyle}> Wearing a Dress </Text>
@@ -76,11 +108,11 @@ export default class Authentication extends React.Component {
         {mainJSX}
 
         <View style={controlStyle}>
-          <TouchableOpacity style={signInStyle} onPress={this.signIn()}>
-            <Text style={activeStyle}> SIGN IN </Text>
+          <TouchableOpacity style={signInStyle} onPress={this.signIn}>
+            <Text style={ActiveStyle}> SIGN IN </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={signUpStyle} onPress={this.signUp()}>
-            <Text style={inactiveStyle}> SIGN UP </Text>
+          <TouchableOpacity style={signUpStyle} onPress={this.signUp}>
+            <Text style={InactiveStyle}> SIGN UP </Text>
           </TouchableOpacity>
         </View>
       </View>
