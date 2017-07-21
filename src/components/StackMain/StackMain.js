@@ -13,6 +13,8 @@ export const StackMain = StackNavigator(
       screen: Authentication,
       navigationOptions: {
         title: 'Authentication Display',
+        header: null,
+        tabBarVisible: false,
         headerStyle: {
           backgroundColor: '#00ffff'
         }
