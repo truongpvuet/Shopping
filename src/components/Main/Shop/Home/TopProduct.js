@@ -4,6 +4,7 @@ import {
   Text,
   StyleSheet,
   Image,
+  TouchableOpacity,
   Dimensions
 } from 'react-native';
 import sp1 from '../../../../media/temp/sp1.jpeg';
@@ -19,33 +20,35 @@ export default class TopProduct extends React.Component {
       body, productContainer, productImage,
       productName, productPrice
     } = styles;
+    const { openProductDetail } = this.props;
+    // onPress={() => { this.props.navigation.navigate('ProductDetail_Display') }}
     return (
       <View style={container}>
         <View style={titleContainer}>
           <Text style={title}> TOP PRODUCT </Text>
         </View>
         <View style={body}>
-          <View style={productContainer}>
+          <TouchableOpacity onPress={openProductDetail} style={productContainer}>
             <Image source={sp1} style={productImage} />
             <Text style={productName}> PRODUCT NAME </Text>
             <Text style={productPrice}> 400$ </Text>
-          </View>
-          <View style={productContainer}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={openProductDetail} style={productContainer}>
             <Image source={sp2} style={productImage} />
             <Text style={productName}> PRODUCT NAME </Text>
             <Text style={productPrice}> 250$ </Text>
-          </View>
+          </TouchableOpacity>
           <View style={{ height: 10, width }} />
-          <View style={productContainer}>
+          <TouchableOpacity onPress={openProductDetail} style={productContainer}>
             <Image source={sp3} style={productImage} />
             <Text style={productName}> PRODUCT NAME </Text>
             <Text style={productPrice}> 300$ </Text>
-          </View>
-          <View style={productContainer}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={openProductDetail} style={productContainer}>
             <Image source={sp4} style={productImage} />
             <Text style={productName}> PRODUCT NAME </Text>
             <Text style={productPrice}> 200$ </Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -54,7 +57,6 @@ export default class TopProduct extends React.Component {
 
 const productWidth = (width - 60) / 2;
 const productImageHeight = (productWidth / 361) * 452;
-
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFF',
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
   },
   title: {
     paddingLeft: 10,
-    color: '#D3D3DF',
+    color: '#AFAEAF',
     fontSize: 20
   },
   body: {

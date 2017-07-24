@@ -17,7 +17,7 @@ export default class Authentication extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSignIn: false
+      isSignIn: true
     };
     this.goBackToMain = this.goBackToMain.bind(this);
     this.signIn = this.signIn.bind(this);

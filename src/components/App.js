@@ -2,10 +2,10 @@ import React from 'react';
 import {
   StatusBar,
 } from 'react-native';
+
 import { Drawer } from './Drawer/Drawer';
 // <Drawer />
-// import Authentication from './Authentication/Authentication';
-// <Authentication />
+// import { StackProductDetail } from './StackMain/StackProductDetail';
 
 StatusBar.setHidden(true);
 

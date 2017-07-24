@@ -18,29 +18,33 @@ export default class Menu extends React.Component {
     this.gotoChangeInfo = this.gotoChangeInfo.bind(this);
     this.gotoOrderHistory = this.gotoOrderHistory.bind(this);
     this.state = {
-      isLoggedIn: false
+      isLoggedIn: true
     };
   }
 
   gotoAuthentication() {
-    this.props.navigation.navigate('Authentication_Display');
+    const { navigate } = this.props.navigation;
+    navigate('Authentication_Display');
   }
   gotoChangeInfo() {
-    this.props.navigation.navigate('ChangeInfo_Display');
+    const { navigate } = this.props.navigation;
+    navigate('ChangeInfo_Display');
   }
   gotoOrderHistory() {
-    this.props.navigation.navigate('OrderHistory_Display');
+    const { navigate } = this.props.navigation;
+    navigate('OrderHistory_Display');
   }
 
   render() {
     const { container, profile, btnStyle, username,
       btnText, btnSignInStyle, btnTextSignIn, loginContainer
     } = styles;
+
     const logoutJSX = (
       <View style={{ flex: 1 }}>
         <TouchableOpacity
           style={btnStyle}
-          onPress={() => { this.props.navigation.navigate('Authentication_Display') }}
+          onPress={() => this.gotoAuthentication()}
         >
           <Text style={btnText}> SIGN IN </Text>
         </TouchableOpacity>
@@ -54,13 +58,13 @@ export default class Menu extends React.Component {
         <View>
           <TouchableOpacity
             style={btnSignInStyle}
-            onPress={() => { this.props.navigation.navigate('OrderHistory_Display') }}
+            onPress={() => this.gotoOrderHistory()}
           >
             <Text style={btnTextSignIn}> Order History </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={btnSignInStyle}
-            onPress={() => { this.props.navigation.navigate('ChangeInfo_Display') }}
+            onPress={() => this.gotoChangeInfo()}
           >
             <Text style={btnTextSignIn}> Change Info </Text>
           </TouchableOpacity>
@@ -111,7 +115,7 @@ const styles = StyleSheet.create({
   },
   btnSignInStyle: {
     height: 50,
-    width: 200,
+    width: 230,
     backgroundColor: '#FFF',
     justifyContent: 'center',
     borderRadius: 10,

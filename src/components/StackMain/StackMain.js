@@ -6,7 +6,6 @@ import Authentication from '../Authentication/Authentication';
 import ChangeInfo from '../ChangeInfo/ChangeInfo';
 import OrderHistory from '../OrderHistory/OrderHistory';
 
-
 export const StackMain = StackNavigator(
   {
     Authentication_Display: {
@@ -40,7 +39,7 @@ export const StackMain = StackNavigator(
     },
     Main_Display: {
       screen: Main,
-    },
+    }
   },
   {
     initialRouteName: 'Main_Display'

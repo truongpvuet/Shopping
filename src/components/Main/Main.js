@@ -5,6 +5,8 @@ import {
 } from 'react-native';
 import Home from './Shop/Home/Home';
 import Header from './Shop/Header';
+// import { StackProductDetail } from '../StackMain/StackProductDetail';
+
 import homeIconS from '../../media/appIcon/home.png';
 // import homeIcon from '../../media/appIcon/home0.png';
 
@@ -25,31 +27,6 @@ export default class Main extends React.Component {
       )
     };
   };
-
-  constructor(props) {
-    super(props);
-    this.gotoAuthentication = this.gotoAuthentication.bind(this);
-    this.gotoChangeInfo = this.gotoChangeInfo.bind(this);
-    this.gotoOrderHistory = this.gotoOrderHistory.bind(this);
-    this.drawerOpen = this.drawerOpen.bind(this);
-    this.drawerClose = this.drawerClose.bind(this);
-  }
-
-  gotoAuthentication() {
-    this.props.navigation.navigate('Authentication_Display');
-  }
-  gotoChangeInfo() {
-    this.props.navigation.navigate('ChangeInfo_Display');
-  }
-  gotoOrderHistory() {
-    this.props.navigation.navigate('OrderHistory_Display');
-  }
-  drawerOpen() {
-    this.props.navigation.navigate('DrawerOpen');
-  }
-  drawerClose() {
-    this.props.navigation.navigate('DrawerClose');
-  }
 
   render() {
     return (
