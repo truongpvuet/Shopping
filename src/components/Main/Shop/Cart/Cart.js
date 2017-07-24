@@ -1,38 +1,29 @@
-import React from 'react';
 import {
-  View,
-  Text,
-  Image,
-  StyleSheet
-} from 'react-native';
-import cartIconS from '../../../../media/appIcon/cart.png';
-// import cartIcon from '../../../../media/appIcon/cart0.png';
+  StackNavigator
+} from 'react-navigation';
+import React from 'react';
+import CartView from './CartView';
+import ProductDetail from '../ProductDetail/ProductDetail';
+
+const CartStack = StackNavigator(
+    {
+      ProductDetail_Display: {
+        screen: ProductDetail
+      },
+      Cart_Display: {
+        screen: CartView
+      }
+    },
+    {
+      initialRouteName: 'Cart_Display',
+      headerMode: 'none'
+    }
+);
 
 export default class Cart extends React.Component {
-  static navigationOptions = () => {
-    return {
-      // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-      tabBarIcon: () => (
-        <Image
-          source={cartIconS}
-          style={style.icon}
-        />
-      )
-    };
-  };
-
   render() {
     return (
-      <View>
-        <Text> Cart </Text>
-      </View>
+      <CartStack />
     );
   }
 }
-
-const style = StyleSheet.create({
-  icon: {
-    width: 20,
-    height: 20,
-  }
-});
