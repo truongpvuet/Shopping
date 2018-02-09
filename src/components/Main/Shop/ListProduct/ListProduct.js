@@ -52,7 +52,7 @@ export default class ListProduct extends React.Component {
               <View style={lastRowInfo}>
                 <Text style={txtColor}> Colo RoyalBlue </Text>
                 <View style={{ backgroundColor: 'cyan', width: 16, height: 16, borderRadius: 8 }} />
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => this.gotoDetail()}>
                   <Text style={txtShowDetail}> SHOW DETAILS </Text>
                 </TouchableOpacity>
               </View>
@@ -67,7 +67,7 @@ export default class ListProduct extends React.Component {
               <View style={lastRowInfo}>
                 <Text style={txtColor}> Colo RoyalBlue </Text>
                 <View style={{ backgroundColor: 'cyan', width: 16, height: 16, borderRadius: 8 }} />
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => this.gotoDetail()}>
                   <Text style={txtShowDetail}> SHOW DETAILS </Text>
                 </TouchableOpacity>
               </View>
@@ -82,7 +82,7 @@ export default class ListProduct extends React.Component {
               <View style={lastRowInfo}>
                 <Text style={txtColor}> Colo RoyalBlue </Text>
                 <View style={{ backgroundColor: 'cyan', width: 16, height: 16, borderRadius: 8 }} />
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => this.gotoDetail()}>
                   <Text style={txtShowDetail}> SHOW DETAILS </Text>
                 </TouchableOpacity>
               </View>
@@ -97,7 +97,7 @@ export default class ListProduct extends React.Component {
               <View style={lastRowInfo}>
                 <Text style={txtColor}> Colo RoyalBlue </Text>
                 <View style={{ backgroundColor: 'cyan', width: 16, height: 16, borderRadius: 8 }} />
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => this.gotoDetail()}>
                   <Text style={txtShowDetail}> SHOW DETAILS </Text>
                 </TouchableOpacity>
               </View>
